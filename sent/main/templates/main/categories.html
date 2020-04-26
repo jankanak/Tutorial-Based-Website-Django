@@ -1,0 +1,25 @@
+{% extends 'main/header.html' %}
+
+
+{% block content %}
+    <div class="row">
+        {% for cat in categories %}
+            <div class="col s12 m6 l4">
+                <a href="{{cat.category_slug}}", style="color:#000">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <img class="responsive-img mb-2" src="/media/{{cat.thumbnail}}" style="width:250px;height: 180px;">  
+                            <h4 class="mb-0">{{ cat.tutorial_category }}</h4>
+                            <!-- <div class="card-title">{{cat.tutorial_category}}</div> -->
+                              <!-- <p style="font-size:70%">Published {{tut.tutorial_published}}</p> -->
+                            <p style="height: 120px;font-size:100%;">{{cat.category_summary}}    </p>                     
+                            <button class="waves-effect waves-light btn" style="margin-top: 6px; text-align: center; ">View</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+

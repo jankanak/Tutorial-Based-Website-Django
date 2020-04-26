@@ -1,0 +1,23 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+
+    <div class="row">
+        {% for tut, partone in part_ones.items %}
+
+            <div class="col s12 m6 l4">
+                <a href="{{partone}}", style="color:#000">
+                    <div class="card hoverable">
+                        <div class="card-content" style="margin-top: 0px;">
+                            <img class="responsive-img mb-2" src="/media/{{tut.thumbnail}}" style="width:250px;height: 200px;"> 
+                            <div class="card-title"><strong>{{tut.tutorial_series}}</strong></div>
+                            <p>{{tut.series_summary}}</p>  
+                            <!--<p style="font-size:70%">Published {{tut.tutorial_published}}</p>-->
+                            <button class="waves-effect waves-light btn" style="margin-top: 6px; text-align: center; ">View</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
